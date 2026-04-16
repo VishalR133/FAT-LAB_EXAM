@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body style="text-align: center; font-family: sans-serif;">
+
+    <h2>Student Course Registration</h2>
+    
+    <form id="regForm">
+        <input type="text" id="name" placeholder="Student Name" required><br><br>
+        <input type="text" id="sid" placeholder="Student ID" required><br><br>
+        <select id="course">
+            <option>Cloud Computing</option>
+            <option>DevOps</option>
+            <option>Data Science</option>
+        </select><br><br>
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="display" style="margin-top: 20px; color: blue;"></div>
+
+    <script>
+        document.getElementById('regForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const sid = document.getElementById('sid').value;
+            const course = document.getElementById('course').value;
+            
+            document.getElementById('display').innerHTML = 
+                `<h3>Registration Details:</h3>
+                 Name: ${name} <br> 
+                 ID: ${sid} <br> 
+                 Course: ${course}`;
+        };
+    </script>
+
+</body>
+</html>
